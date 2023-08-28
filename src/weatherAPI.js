@@ -1,6 +1,6 @@
 const request = require('postman-request');
 const chalk = require('chalk');
-const api_key = require('./secret.js');
+const api_key = require('../.env');
 const baseURL = 'http://api.weatherstack.com/current';
 
 
