@@ -12,7 +12,6 @@ weatherForm.addEventListener('submit', async (e) => {
     const inputValue = document.querySelector('#city').value;
     const res = await fetch(`http://api.weatherstack.com/current?access_key=ce8e850a26092946a008066840002c71&query=${inputValue}&units=f`);
     const weather = await res.json();
-    console.log(`In ${weather.location.name}, ${weather.location.region} it is currently: ${weather.current.weather_descriptions[0]} and ${weather.current.temperature} degrees`);
     m1.textContent = `In ${weather.location.name}, ${weather.location.region} it is currently:`;
     m2.textContent = `${weather.current.weather_descriptions[0]} and ${weather.current.temperature} degrees`;
 
@@ -21,25 +20,4 @@ weatherForm.addEventListener('submit', async (e) => {
     m2.textContent = '';
   }
 
-})
-
-// getWeather();
-
-
-// const fullURL = 'http://api.weatherstack.com/current?access_key=ce8e850a26092946a008066840002c71&query=murrieta';
-// const forecast = require('../../src/weatherAPI');
-
-//NOT WORKING 
-// const test = async () => {
-//   try {
-//     const res = await forecast('san diego');
-//     const data = await res.json();
-//     console.log(data);
-//   }
-//   catch (e) { console.log({ e }) }
-// };
-
-// test()
-
-
-
+});
