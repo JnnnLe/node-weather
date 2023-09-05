@@ -1,12 +1,12 @@
 const path = require('path');
+// const process = require('process');
 const express = require('express');
 const hbs = require('hbs');
 const chalk = require('chalk');
 const forecast = require('./weatherAPI.js');
 
-
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public');
@@ -83,17 +83,3 @@ app.get('*', (req, res) => {
 app.listen(port, () => {
   console.log(chalk.bgBlue(`Express app listening on port ${port}`));
 });
-
-
-
-
-
-// // i1: Code before handlebars, replaced /src/index.html with /views/index.hbs
-// // const publicDirPath = path.join(__dirname, '../public');
-// // app.use(express.static(publicDirPath));
-// // // console.log({ __dirname, publicDirPath });
-
-// // i2: Using index.hbs (with .hb in views dir)
-// app.set('views', path.join(__dirname, '../views'));
-// console.log({ __dirname });
-// app.set('view engine', 'hbs');
