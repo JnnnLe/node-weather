@@ -3,7 +3,9 @@ const chalk = require('chalk');
 const api_key = 'ce8e850a26092946a008066840002c71';
 const baseURL = 'http://api.weatherstack.com/current';
 
-// console.log(process.env.WEATHER_API)
+// require('dotenv').config();
+console.log("JENNNNN");
+console.log('********', process.env);
 
 
 const forecast = (loc, cb) => {
