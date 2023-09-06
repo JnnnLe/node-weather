@@ -1,10 +1,9 @@
+require('dotenv').config();
 const path = require('path');
-// const process = require('process');
 const express = require('express');
 const hbs = require('hbs');
 const chalk = require('chalk');
 const forecast = require('./weatherAPI.js');
-
 const app = express();
 const port = process.env.PORT || 3001;
 

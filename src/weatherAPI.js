@@ -1,16 +1,11 @@
+require('dotenv').config();
 const request = require('postman-request');
 const chalk = require('chalk');
-const api_key = 'ce8e850a26092946a008066840002c71';
 const baseURL = 'http://api.weatherstack.com/current';
 
-// require('dotenv').config();
-console.log("JENNNNN");
-console.log('********', process.env);
-
-
 const forecast = (loc, cb) => {
-  console.log({ api_key })
-  const url = `${baseURL}?access_key=${api_key}&query=${loc}&units=f`;
+  console.log(process.env.WEATHER_API_KEY);
+  const url = `${baseURL}?access_key=${process.env.WEATHER_API_KEY}&query=${loc}&units=f`;
 
   request({ url, json: true }, (err, { body }) => {
     if (err) {
