@@ -11,6 +11,8 @@ weatherForm.addEventListener('submit', async (e) => {
     const res = await fetch(`http://api.weatherstack.com/current?access_key=ce8e850a26092946a008066840002c71&query=${inputValue}&units=f`);
     const weather = await res.json();
     console.log(weather);
+    m1.textContent = `In ${weather.location.name}, ${weather.location.region} it is currently:`;
+    m2.textContent = `${weather.current.weather_descriptions[0]} and ${weather.current.temperature} degrees`;
   } catch (err) {
     m1.textContent = 'Please input a city name';
     m2.textContent = '';
