@@ -4,7 +4,6 @@ const chalk = require('chalk');
 const baseURL = 'http://api.weatherstack.com/current';
 
 const forecast = (loc, cb) => {
-  console.log(process.env.WEATHER_API_KEY);
   const url = `${baseURL}?access_key=${process.env.WEATHER_API_KEY}&query=${loc}&units=f`;
 
   request({ url, json: true }, (err, { body }) => {
